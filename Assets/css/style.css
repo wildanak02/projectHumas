@@ -356,6 +356,8 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
  * ------------------------------------------------------------------- */
 .header-logo {
   z-index: 501;
+  max-width: 200px;
+  max-height: 80px;
   display: inline-block;
   margin: 0;
   padding: 0;

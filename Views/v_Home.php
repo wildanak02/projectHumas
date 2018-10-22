@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+     <!-- Bootstrap CSS -->
+     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Animate CSS -->
+     <link href="assets/vendors/animate/animate.css" rel="stylesheet">
+     <!-- Icon CSS-->
+     <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
+     <!-- Owlcarousel CSS-->
+     <link rel="stylesheet" type="text/css" href="assets/vendors/owl_carousel/owl.carousel.css" media="all">
+     <!--Template Styles CSS-->
+     <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+
 </head>
    <body id="top">
       <div class="bg-grediunt">
@@ -19,10 +32,17 @@
                      <div class="header-nav__content">
                         <h3>Si-HAP </h3>
                         <ul class="header-nav__list">
+                          <?php if(isset($_SESSION['login'])){ ?>
+                           <li class="current"><a class=""  href="?controllers=Home&action=home" >Home</a></li>
+                           <li><a class=""  href="?controller=Mydata&action=home" >My Data</a></li>
+													 <li><a class=""  href="jemberkab.go.id" >Jemberkab.go.id</a></li>
+                           <li><a class=""  href="logout.php" >Logout</a></li>
+                         <?php echo $_SESSION['login']; }
+                         else {?>
                            <li class="current"><a class=""  href="?controllers=Home&action=home" >Home</a></li>
                            <li><a class=""  href="?controller=Login&action=home" >Login</a></li>
 													 <li><a class=""  href="jemberkab.go.id" >Jemberkab.go.id</a></li>
-
+                         <?php } ?>
 
                         </ul>
                         <ul class="header-nav__social">

@@ -12,13 +12,17 @@ function call($controller, $action){
 		$controller=new HomeController();
 		break;
 
+		case 'Mydata':
+		$controller=new MydataController();
+		break;
 
 	}
 	$controller->{ $action }();
 }
 
 $controllers = array('Login' => ['home','authentication'],
-	'Home'=>['home']
+	'Home'=>['home'],
+	'Mydata'=>['home']
 	);
 
 
