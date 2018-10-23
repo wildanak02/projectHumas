@@ -34,10 +34,16 @@
                         <ul class="header-nav__list">
                           <?php if(isset($_SESSION['login'])){ ?>
                            <li class="current"><a class=""  href="?controllers=Home&action=home" >Home</a></li>
-                           <li><a class=""  href="?controller=Mydata&action=home" >My Data</a></li>
+                           <?php if ($_SESSION['login']=='admin'){ ?>
+                           <li><a class=""  href="?controller=Panel&action=homeAdmin" >My Panel</a></li>
+                         <?php }elseif ($_SESSION['login']=='superuser') { ?>
+                            <li><a class=""  href="?controller=Panel&action=homeSuper" >My Panel</a></li>
+                          <?php } else { ?>
+                             <li><a class=""  href="?controller=Panel&action=homeUser" >My Panel</a></li>
+                           <?php } ?>
 													 <li><a class=""  href="jemberkab.go.id" >Jemberkab.go.id</a></li>
                            <li><a class=""  href="logout.php" >Logout</a></li>
-                         <?php echo $_SESSION['login']; }
+                         <?php }
                          else {?>
                            <li class="current"><a class=""  href="?controllers=Home&action=home" >Home</a></li>
                            <li><a class=""  href="?controller=Login&action=home" >Login</a></li>

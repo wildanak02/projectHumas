@@ -28,7 +28,7 @@ if (isset($_GET['error'])) : ?>
 <title> SI-HAP  </title>
 <!-- Favicon -->
 <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
-<!-- Mydata -->
+<!-- AdminPanel -->
 
 
 </head>

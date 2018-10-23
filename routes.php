@@ -12,8 +12,9 @@ function call($controller, $action){
 		$controller=new HomeController();
 		break;
 
-		case 'Mydata':
-		$controller=new MydataController();
+		case 'Panel':
+		require_once('Models/m_User.php');
+		$controller=new PanelController();
 		break;
 
 	}
@@ -22,7 +23,7 @@ function call($controller, $action){
 
 $controllers = array('Login' => ['home','authentication'],
 	'Home'=>['home'],
-	'Mydata'=>['home']
+	'Panel'=>['homeAdmin','homeSuper','homeUser','tambahUser','editUser','hapusUser']
 	);
 
 
