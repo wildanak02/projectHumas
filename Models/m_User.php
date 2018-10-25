@@ -43,11 +43,11 @@ class User
 	{
 		$db = DB::getInstance();
 
-		$req = $db->query("UPDATE tb_user SET eventName='".$level."',type='".$username."', organizer='".$password."' WHERE idUser='$idUser'");
+		$req = $db->query("UPDATE tb_user SET level='".$level."',username='".$username."', password='".$password."' WHERE idUser='$idUser'");
 		return $req;
 	}
 
-  public static function hapus($idUser){
+  public static function hapusUser($idUser){
     $db = DB::getInstance();
 
     $req = $db->query("DELETE FROM tb_user WHERE idUser='$idUser'");

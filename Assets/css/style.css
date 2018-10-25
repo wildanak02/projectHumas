@@ -346,7 +346,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 .s-header {
   z-index: 500;
   width: 100%;
-  height: 96px;
+  height: 20px;
   background-color: transparent;
   position: absolute;
   top: 24px;
@@ -649,8 +649,8 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 @media only screen and (max-width: 600px) {
   .s-header {
-    height: 90px;
-    top: 12px;
+    height: 2px;
+    top: 2px;
   }
 
   .header-logo {

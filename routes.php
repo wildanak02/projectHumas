@@ -14,6 +14,7 @@ function call($controller, $action){
 
 		case 'Panel':
 		require_once('Models/m_User.php');
+		require_once('Models/m_Pers.php');
 		$controller=new PanelController();
 		break;
 
@@ -23,7 +24,7 @@ function call($controller, $action){
 
 $controllers = array('Login' => ['home','authentication'],
 	'Home'=>['home'],
-	'Panel'=>['homeAdmin','homeSuper','homeUser','tambahUser','editUser','hapusUser']
+	'Panel'=>['homeAdmin','homeSuper','homeUser','mediaAdmin','tambahUser','editUser','hapusUser','tambahPers','editPers','hapusPers']
 	);
 
 
