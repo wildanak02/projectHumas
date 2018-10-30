@@ -31,14 +31,15 @@ if (isset($_GET['error'])) : ?>
 <!-- AdminPanel -->
 
 								<!-- Bootstrap CSS-->
-								<link rel="stylesheet" href="Assets/bootstrap-3.3.7/css/bootstrap.min.css" >
-								<link rel="stylesheet" href="Assets/bootstrap-3.3.7/css/bootstrap-theme.min.css"
+								<link rel="stylesheet" href="Assets/bootstrap-3.3.7/css/bootstrap.min.css">
+								<link rel="stylesheet" href="Assets/bootstrap-3.3.7/css/bootstrap-theme.min.css">
 </head>
 <body>
 
 	<!-- Bootstrap JS-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="Assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
 
 	<?php require_once('routes.php') ?>
 </body>

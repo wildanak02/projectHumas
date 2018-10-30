@@ -14646,6 +14646,3 @@ section {
 .pagination ul li:hover{
     cursor: pointer;
 }
-.table-responsive {
-    display: table;
-}

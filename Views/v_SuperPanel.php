@@ -175,9 +175,9 @@
 
                     </div>
                     </div>
-                    <div class="row">
 
-                      <div class="col-md-12">
+
+
                         <!-- DATA TABLE-->
                         <div class="table-responsive m-b-40">
                           <table class="table table-borderless table-striped table-earning" id= "table-id">
@@ -220,16 +220,12 @@
                             			</div>
 
                           </div>
-                        </div>
+
 
                         <!-- END DATA TABLE-->
 
-                        <div class="col-md-12">
+
                           <br><br><br><br>
-                        </div>
-
-
-                      </div>
 
                   </div>
                 </div>
