@@ -41,7 +41,7 @@
         <div class="container-fluid">
           <div class="header-mobile-inner">
             <a class="logo" href="index.html">
-              <img src="Assets/data/images/icon/logo.png" alt="CoolAdmin" />
+              <img src="Assets/images/logo.png" alt="Logo" />
             </a>
             <button class="hamburger hamburger--slider" type="button">
               <span class="hamburger-box">
@@ -90,7 +90,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
           <div class="logo">
             <a href="#">
-              <img src="Assets/data/images/icon/logo.png" alt="Cool Admin" />
+            <img src="Assets/images/logo.png" alt="Logo" />
             </a>
           </div>
           <div class="menu-sidebar__content js-scrollbar1">
