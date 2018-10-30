@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2018 at 08:48 AM
+-- Generation Time: Oct 30, 2018 at 04:43 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -40,13 +40,17 @@ CREATE TABLE `tb_pers` (
 
 INSERT INTO `tb_pers` (`idPers`, `nama`, `nohp`, `media`, `alamat`) VALUES
 (2, 'Wildan', '082228619292', 'Kompas TV', 'Jl. Manggis No. 84'),
-(3, 'Thariq', '082XXX', 'coba', 'lagi'),
+(3, 'Thariq', '082XXX', 'coba', 'lagigan'),
 (4, 'a', 'a', 'a', 'a'),
 (5, 'b', 'b', 'b', 'b'),
 (6, 'c', 'c', 'c', 'c'),
 (7, 'd', 'd', 'd', 'd'),
 (8, '', 'e', 'e', 'e'),
-(9, 'f', 'f', 'f', 'f');
+(9, 'f', 'f', 'f', 'f'),
+(10, 'g', 'g', 'g', 'g'),
+(11, 'h', 'h', 'h', 'h'),
+(12, 'j', 'j', 'j', 'j'),
+(13, 'k', 'k', 'Kompas TV', 'k');
 
 -- --------------------------------------------------------
 
@@ -96,12 +100,12 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_pers`
 --
 ALTER TABLE `tb_pers`
-  MODIFY `idPers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idPers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -11,15 +11,13 @@
 
   <!-- Title Page-->
   <title>Data</title>
-
   <!-- Fontfaces CSS-->
   <link href="Assets/data/css/font-face.css" rel="stylesheet" media="all">
   <link href="Assets/data/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
   <link href="Assets/data/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
   <link href="Assets/data/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
-  <!-- Bootstrap CSS-->
-  <link href="Assets/data/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
 
   <!-- Vendor CSS-->
   <link href="Assets/data/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -152,20 +150,41 @@
               <div class="main-content">
                 <div class="section__content section__content--p30">
                   <div class="container-fluid">
-                    <button type="button" data-toggle="modal" data-target="#tambahpers" class="btn btn-success mb-1">Tambah Data</button>
-                    <br><br>
                     <div class="row">
 
 
+                      <div class="col-md-3">
+                        <button type="button" data-toggle="modal" data-target="#tambahpers" class="btn btn-success mb-1">Tambah Data</button>
+                        <br><br>
+                      </div>
+
+                      <div class="col-md-3">
+                        <select class="form-control" name="state" id="maxRows">
+                          <option value="5000">Show ALL Rows</option>
+                          <option value="5">5</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="50">50</option>
+                          <option value="70">70</option>
+                          <option value="100">100</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6">
+
+                    </div>
+                    </div>
+                    <div class="row">
 
                       <div class="col-md-12">
                         <!-- DATA TABLE-->
                         <div class="table-responsive m-b-40">
-                          <table class="table table-borderless table-striped table-earning">
+                          <table class="table table-borderless table-striped table-earning" id= "table-id">
                             <thead>
                               <tr>
-                                <th>Nama</th>
-                                <th>No HP</th>
+                                <th onclick="sortTable(1)" >Nama <label class="fa fa-caret-down"></label></th>
+                                <th>No HP </th>
                                 <th>Nama Media</th>
                                 <th>Alamat</th>
                                 <th></th>
@@ -190,8 +209,19 @@
                                 <?php }?>
                               </tbody>
                             </table>
+
+                            <!--		Start Pagination -->
+                            			<div class='pagination-container' >
+                            				<nav>
+                            				  <ul class="pagination">
+                            				   <!--	Here the JS Function Will Add the Rows -->
+                            				  </ul>
+                            				</nav>
+                            			</div>
+
                           </div>
                         </div>
+
                         <!-- END DATA TABLE-->
 
                         <div class="col-md-12">
@@ -200,7 +230,7 @@
 
 
                       </div>
-                    </div>
+
                   </div>
                 </div>
 
@@ -355,9 +385,7 @@
 
               <!-- Jquery JS-->
               <script src="Assets/data/vendor/jquery-3.2.1.min.js"></script>
-              <!-- Bootstrap JS-->
-              <script src="Assets/data/vendor/bootstrap-4.1/popper.min.js"></script>
-              <script src="Assets/data/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+
               <!-- Vendor JS       -->
               <script src="Assets/data/vendor/slick/slick.min.js">
               </script>
@@ -376,6 +404,11 @@
 
               <!-- Main JS-->
               <script src="Assets/data/js/main.js"></script>
+              <script src="Assets/js/js.js"></script>
+
+              <script type="text/javascript">
+                getPagination('#table-id');
+              </script>
 
               <script type="text/javascript">
 
@@ -403,6 +436,64 @@
 
                 $("#hapusPers .modal-body #idPers").val(idPers);
               });
+              </script>
+
+              <script type="text/javascript">
+              function sortTable(n) {
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementById("table-id");
+                switching = true;
+                //Set the sorting direction to ascending:
+                dir = "asc";
+                /*Make a loop that will continue until
+                no switching has been done:*/
+                while (switching) {
+                  //start by saying: no switching is done:
+                  switching = false;
+                  rows = table.rows;
+                  /*Loop through all table rows (except the
+                  first, which contains table headers):*/
+                  for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    /*check if the two rows should switch place,
+                    based on the direction, asc or desc:*/
+                    if (dir == "asc") {
+                      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch= true;
+                        break;
+                      }
+                    } else if (dir == "desc") {
+                      if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                      }
+                    }
+                  }
+                  if (shouldSwitch) {
+                    /*If a switch has been marked, make the switch
+                    and mark that a switch has been done:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    //Each time a switch is done, increase this count by 1:
+                    switchcount ++;
+                  } else {
+                    /*If no switching has been done AND the direction is "asc",
+                    set the direction to "desc" and run the while loop again.*/
+                    if (switchcount == 0 && dir == "asc") {
+                      dir = "desc";
+                      switching = true;
+                    }
+                  }
+                }
+              }
+
               </script>
             </body>
 

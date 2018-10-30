@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
 	<?php
@@ -21,18 +21,24 @@ if (isset($_GET['error'])) : ?>
 </div>
 <?php endif;?>
 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
 <title> SI-HAP  </title>
 <!-- Favicon -->
 <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
 <!-- AdminPanel -->
 
-
+								<!-- Bootstrap CSS-->
+								<link rel="stylesheet" href="Assets/bootstrap-3.3.7/css/bootstrap.min.css" >
+								<link rel="stylesheet" href="Assets/bootstrap-3.3.7/css/bootstrap-theme.min.css"
 </head>
 <body>
+
+	<!-- Bootstrap JS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="Assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
 	<?php require_once('routes.php') ?>
 </body>

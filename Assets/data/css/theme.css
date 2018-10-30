@@ -14641,3 +14641,11 @@ section {
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
 }
+
+/* table */
+.pagination ul li:hover{
+    cursor: pointer;
+}
+.table-responsive {
+    display: table;
+}
