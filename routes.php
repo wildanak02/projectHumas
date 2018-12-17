@@ -18,13 +18,25 @@ function call($controller, $action){
 		$controller=new PanelController();
 		break;
 
+		case 'Media':
+		require_once('Models/m_Media.php');
+		$controller=new MediaController();
+		break;
+
+		case 'Profile':
+		require_once('Models/m_User.php');
+		$controller=new ProfileController();
+		break;
+
 	}
 	$controller->{ $action }();
 }
 
 $controllers = array('Login' => ['home','authentication'],
 	'Home'=>['home'],
-	'Panel'=>['homeAdmin','homeSuper','homeUser','mediaAdmin','tambahUser','editUser','hapusUser','tambahPers','editPers','hapusPers']
+	'Panel'=>['homeAdmin','homeSuper','homeUser','tambahUser','editUser','hapusUser','tambahPers','editPers','hapusPers'],
+	'Media'=>['mediaAdmin','uploadFile'],
+	'Profile'=>['home','editProfile']
 	);
 
 
@@ -38,5 +50,4 @@ if (array_key_exists($controller, $controllers)) {
 } else {
 	call($controller,'error');
 }
-
 ?>

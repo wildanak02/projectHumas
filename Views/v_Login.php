@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" >
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Si-HAP</title>
-
-
 
   <link rel="stylesheet" href="Assets/Login/css/style.css">
 

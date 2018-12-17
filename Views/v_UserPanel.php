@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <!-- Required meta tags-->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="au theme template">
-  <meta name="author" content="Hau Nguyen">
-  <meta name="keywords" content="au theme template">
-
-  <!-- Title Page-->
-  <title>Data</title>
 
   <!-- Fontfaces CSS-->
   <link href="Assets/data/css/font-face.css" rel="stylesheet" media="all">
@@ -43,7 +33,7 @@
         <div class="container-fluid">
           <div class="header-mobile-inner">
             <a class="logo" href="index.html">
-              <img src="Assets/data/images/icon/logo.png" alt="CoolAdmin" />
+              <img src="Assets/images/logo.png" alt="Logo" />
             </a>
             <button class="hamburger hamburger--slider" type="button">
               <span class="hamburger-box">

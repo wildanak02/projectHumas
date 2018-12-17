@@ -56,6 +56,27 @@ class User
       return $req;
   }
 
+  public static function profile($username){
+    $list = [];
+
+    $db = DB::getInstance();
+
+    $req = $db->query("SELECT * FROM tb_user where username='$username'");
+    foreach ($req->fetchAll() as $user) {
+        $list[] = new User($user['idUser'],$user['level'],$user['username'],$user['password']
+          );
+      }
+      return $list;
+  }
+
+  public static function editProfile($username,$password)
+  {
+    $db = DB::getInstance();
+    $sesi = $_SESSION['login'];
+    $req = $db->query("UPDATE tb_user SET username='".$username."', password='".$password."' WHERE username='$sesi'");
+
+    return $req;
+  }
 
 }
 

@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <!-- Required meta tags-->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="au theme template">
-  <meta name="author" content="Hau Nguyen">
-  <meta name="keywords" content="au theme template">
 
-  <!-- Title Page-->
-  <title>Data</title>
 
   <!-- Fontfaces CSS-->
   <link href="Assets/data/css/font-face.css" rel="stylesheet" media="all">
@@ -62,16 +53,12 @@
                 <a href="?controller=Panel&action=homeAdmin">
                   <i class="fas fa-table"></i>Data User</a>
                 </li>
-                <li>
-                  <a href="?controller=Panel&action=mediaAdmin">
-                    <i class="fas fa-folder-open"></i>Media Sharing</a>
-                  </li>
                   <li class="has-sub">
                     <a class="js-arrow" href="#">
                       <i class="fas fa-user"></i>Acc</a>
                       <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                         <li>
-                          <a href="login.html">Profile</a>
+                          <a href="?controller=Profile&action=home">Profile</a>
                         </li>
                         <li>
                           <a href="logout.php">Logout</a>
@@ -104,16 +91,12 @@
                     <a href="?controller=Panel&action=homeAdmin">
                       <i class="fas fa-table"></i>Data User</a>
                     </li>
-                    <li>
-                      <a href="?controller=Panel&action=mediaAdmin">
-                        <i class="fas fa-folder-open"></i>Media Sharing</a>
-                      </li>
                       <li class="has-sub">
                         <a class="js-arrow" href="#">
                           <i class="fas fa-user"></i>Acc</a>
                           <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                             <li>
-                              <a href="login.html">Profile</a>
+                              <a href="?controller=Profile&action=home">Profile</a>
                             </li>
                             <li>
                               <a href="logout.php">Logout</a>
@@ -151,6 +134,10 @@
                         <br><br>
                       </div>
 
+                      <div class="col-md-6">
+                        <input class="form-control" id="livesearch" type="text" placeholder="Search...." />
+                      </div>
+
                       <div class="col-md-3">
                         <select class="form-control" name="state" id="maxRows">
                           <option value="5000">Show ALL Rows</option>
@@ -163,11 +150,6 @@
                           <option value="100">100</option>
                         </select>
                       </div>
-
-                      <div class="col-md-6">
-
-
-                    </div>
 
                     <div class="row">
 
@@ -494,6 +476,19 @@
             }
 
             </script>
+
+            <!-- search -->
+            <script src="Assets/search/js/livesearch.js"></script>
+            <script type="text/javascript">
+            $(document).ready(function(){
+
+              $('input#livesearch').liveSearch({
+                table : 'table' // table selector
+              });
+
+            });
+            </script>
+            <!-- end search -->
           </body>
 
           </html>

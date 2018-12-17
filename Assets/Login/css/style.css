@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
 
 body {
-  background-image: url('../../images/backsea.jpg');
+  background-image: url('../../images/loginback2.jpg');
   background-repeat: no-repeat;
-  background-size: 100% contain;
+  background-size: cover;
 }
 
 /* BOX LOGIN */

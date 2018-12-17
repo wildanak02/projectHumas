@@ -1,7 +1,4 @@
 <?php
-	/**
-	*
-	*/
 	class Login
 	{
 		public $username;

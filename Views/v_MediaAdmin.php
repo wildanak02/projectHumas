@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <!-- Required meta tags-->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="au theme template">
-  <meta name="author" content="Hau Nguyen">
-  <meta name="keywords" content="au theme template">
-
-  <!-- Title Page-->
-  <title>Data</title>
 
   <!-- Fontfaces CSS-->
   <link href="Assets/data/css/font-face.css" rel="stylesheet" media="all">
@@ -33,6 +23,10 @@
   <!-- Main CSS-->
   <link href="Assets/data/css/theme.css" rel="stylesheet" media="all">
 
+  <!-- Dropzone CSS -->
+  <link rel="stylesheet" href="Assets/dropzone/css/style.css">
+
+
 </head>
 
 <body class="animsition">
@@ -43,7 +37,7 @@
         <div class="container-fluid">
           <div class="header-mobile-inner">
             <a class="logo" href="index.html">
-              <img src="Assets/data/images/icon/logo.png" alt="CoolAdmin" />
+              <img src="Assets/images/logo.png" alt="Logo" />
             </a>
             <button class="hamburger hamburger--slider" type="button">
               <span class="hamburger-box">
@@ -68,48 +62,6 @@
                   <a href="?controller=Panel&action=mediaAdmin">
                     <i class="fas fa-folder-open"></i>Media Sharing</a>
                   </li>
-                <li class="has-sub">
-                  <a class="js-arrow" href="#">
-                    <i class="fas fa-user"></i>Acc</a>
-                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                      <li>
-                        <a href="login.html">Profile</a>
-                      </li>
-                      <li>
-                        <a href="logout.php">Logout</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      <!-- END HEADER MOBILE-->
-
-      <!-- MENU SIDEBAR-->
-      <aside class="menu-sidebar d-none d-lg-block">
-        <div class="logo">
-          <a href="#">
-            <img src="Assets/data/images/icon/logo.png" alt="Cool Admin" />
-          </a>
-        </div>
-        <div class="menu-sidebar__content js-scrollbar1">
-          <nav class="navbar-sidebar">
-            <ul class="list-unstyled navbar__list">
-              <li>
-                <a href="?controller=Home&action=home">
-                  <i class="fas fa-home"></i>Home</a>
-                </li>
-                <li >
-                  <a href="?controller=Panel&action=homeAdmin">
-                    <i class="fas fa-table"></i>Data User</a>
-                  </li>
-                  <li class="active">
-                    <a href="?controller=Panel&action=mediaAdmin">
-                      <i class="fas fa-folder-open"></i>Media Sharing</a>
-                    </li>
                   <li class="has-sub">
                     <a class="js-arrow" href="#">
                       <i class="fas fa-user"></i>Acc</a>
@@ -125,66 +77,198 @@
                   </ul>
                 </li>
               </ul>
-            </nav>
+            </div>
+          </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+          <div class="logo">
+            <a href="#">
+              <img src="Assets/images/logo.png" alt="Logo" />
+            </a>
           </div>
-        </aside>
-        <!-- END MENU SIDEBAR-->
+          <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+              <ul class="list-unstyled navbar__list">
+                <li>
+                  <a href="?controller=Home&action=home">
+                    <i class="fas fa-home"></i>Home</a>
+                  </li>
+                  <li >
+                    <a href="?controller=Panel&action=homeAdmin">
+                      <i class="fas fa-table"></i>Data User</a>
+                    </li>
+                    <li class="active">
+                      <a href="?controller=Panel&action=mediaAdmin">
+                        <i class="fas fa-folder-open"></i>Media Sharing</a>
+                      </li>
+                      <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                          <i class="fas fa-user"></i>Acc</a>
+                          <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                            <li>
+                              <a href="login.html">Profile</a>
+                            </li>
+                            <li>
+                              <a href="logout.php">Logout</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </aside>
+            <!-- END MENU SIDEBAR-->
 
-        <!-- PAGE CONTAINER-->
-        <div class="page-container">
-          <!-- HEADER DESKTOP-->
-          <header class="header-desktop">
-            <div class="section__content section__content--p30">
-              <div class="container-fluid">
-                <div class="header-wrap">
+            <!-- PAGE CONTAINER-->
+            <div class="page-container">
+              <!-- HEADER DESKTOP-->
+              <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                  <div class="container-fluid">
+                    <div class="header-wrap">
 
-                  <div class="header-button">
+                      <div class="header-button">
 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </header>
+              <!-- END HEADER DESKTOP-->
+
+
+              <!-- MAIN CONTENT-->
+              <div class="main-content">
+                <div class="section__content section__content--p30">
+                  <div class="container-fluid">
+                    <div class="row">
+                    <div class="col-md-3">
+                      <button type="button" data-toggle="modal" data-target="#uploadfile" class="btn btn-success mb-1">Upload File</button>
+                      <br><br>
+                    </div>
+                  </div>
+                  <div class="row">
+
+
+
+                    <div class="col-md-12">
+                      <!-- DATA TABLE-->
+                      <div class="table-responsive m-b-40">
+                        <table class="table table-borderless table-striped table-earning" id= "table-id">
+                          <thead>
+                            <tr>
+                              <th>idFile</th>
+                              <th>idUser</th>
+                              <th>Nama</th>
+                              <th>Tanggal</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php foreach ($files as $file) {
+
+                              ?>
+
+                              <tr>
+                                <td><?php echo $file->idFile; ?></td>
+                                <td><?php echo $file->idUser; ?></td>
+                                <td><?php echo $file->nama; ?></td>
+                                <td><?php echo $file->tanggalUpload; ?></td>
+                              </tr>
+
+                            <?php }?>
+                          </tbody>
+                        </table>
+
+                        <!--		Start Pagination -->
+                              <div class='pagination-container' >
+                                <nav>
+                                  <ul class="pagination">
+                                   <!--	Here the JS Function Will Add the Rows -->
+                                  </ul>
+                                </nav>
+                              </div>
+                      </div>
+                    </div>
+                    <!-- END DATA TABLE-->
+                    <div class="col-md-12">
+                      <br><br><br><br>
+                    </div>
+
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <!-- modal tambahUser -->
+            <div class="modal fade" id="uploadfile" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="mediumModalLabel">Upload File</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form  role="form" method="POST" class="form-horizontal">
+
+                      <div class="row form-group">
+                        <input type="file" name="file" accept="audio/*|video/*|image/*">
+                      </div>
+
+
+                      <input type="hidden" name="controller" value="Media"></input>
+                      <input type="hidden" name="action" value="uploadFile"></input>
+
+                      <button type="submit" class="btn btn-primary" >Simpan</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    </form>
                   </div>
                 </div>
               </div>
             </div>
-          </header>
-          <!-- END HEADER DESKTOP-->
+            <!-- end modal tambahUser -->
 
 
-          <!-- MAIN CONTENT-->
-          <div class="main-content">
-            <div class="section__content section__content--p30">
-              <div class="container-fluid">
+            <!-- Jquery JS-->
+            <script src="Assets/data/vendor/jquery-3.2.1.min.js"></script>
+            <!-- Bootstrap JS-->
+            <script src="Assets/data/vendor/bootstrap-4.1/popper.min.js"></script>
+            <script src="Assets/data/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+            <!-- Vendor JS       -->
+            <script src="Assets/data/vendor/slick/slick.min.js">
+            </script>
+            <script src="Assets/data/vendor/wow/wow.min.js"></script>
+            <script src="Assets/data/vendor/animsition/animsition.min.js"></script>
+            <script src="Assets/data/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+            </script>
+            <script src="Assets/data/vendor/counter-up/jquery.waypoints.min.js"></script>
+            <script src="Assets/data/vendor/counter-up/jquery.counterup.min.js">
+            </script>
+            <script src="Assets/data/vendor/circle-progress/circle-progress.min.js"></script>
+            <script src="Assets/data/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+            <script src="Assets/data/vendor/chartjs/Chart.bundle.min.js"></script>
+            <script src="Assets/data/vendor/select2/select2.min.js">
+            </script>
 
-                </div>
-              </div>
-            </div>
+            <!-- Main JS-->
+            <script src="Assets/data/js/main.js"></script>
 
+            <!-- JS Dropzone -->
+            <script src="Assets/dropzone/js/jquery-1.11.1.min.js" ></script>
+            <script lsrc="Assets/dropzone/js/droply-min.js" ></script>
+            <script type="text/javascript">
+            $("#myUploader").droply();
+            </script>
 
-          </div>
+          </body>
 
-
-          <!-- Jquery JS-->
-          <script src="Assets/data/vendor/jquery-3.2.1.min.js"></script>
-          <!-- Bootstrap JS-->
-          <script src="Assets/data/vendor/bootstrap-4.1/popper.min.js"></script>
-          <script src="Assets/data/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-          <!-- Vendor JS       -->
-          <script src="Assets/data/vendor/slick/slick.min.js">
-          </script>
-          <script src="Assets/data/vendor/wow/wow.min.js"></script>
-          <script src="Assets/data/vendor/animsition/animsition.min.js"></script>
-          <script src="Assets/data/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-          </script>
-          <script src="Assets/data/vendor/counter-up/jquery.waypoints.min.js"></script>
-          <script src="Assets/data/vendor/counter-up/jquery.counterup.min.js">
-          </script>
-          <script src="Assets/data/vendor/circle-progress/circle-progress.min.js"></script>
-          <script src="Assets/data/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-          <script src="Assets/data/vendor/chartjs/Chart.bundle.min.js"></script>
-          <script src="Assets/data/vendor/select2/select2.min.js">
-          </script>
-
-          <!-- Main JS-->
-          <script src="Assets/data/js/main.js"></script>
-
-        </body>
-
-        </html>
+          </html>

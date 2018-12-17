@@ -23,7 +23,7 @@ class Pers
 
 		$db = DB::getInstance();
 
-		$req = $db->query("SELECT * FROM tb_Pers");
+		$req = $db->query("SELECT * FROM tb_pers");
     foreach ($req->fetchAll() as $pers) {
   			$list[] = new Pers($pers['idPers'],$pers['nama'],$pers['nohp'],$pers['media'],$pers['alamat']
   				);
@@ -34,7 +34,7 @@ class Pers
   public static function tambahPers($nama,$nohp,$media,$alamat){
   $db = DB::getInstance();
 
-  $req = $db->query("INSERT INTO tb_Pers
+  $req = $db->query("INSERT INTO tb_pers
     VALUES (NULL,'".$nama."','".$nohp."', '".$media."', '".$alamat."');
     ");
 
@@ -45,14 +45,14 @@ class Pers
 	{
 		$db = DB::getInstance();
 
-		$req = $db->query("UPDATE tb_Pers SET nama='".$nama."',nohp='".$nohp."', media='".$media."', alamat='".$alamat."' WHERE idPers='$idPers'");
+		$req = $db->query("UPDATE tb_pers SET nama='".$nama."',nohp='".$nohp."', media='".$media."', alamat='".$alamat."' WHERE idPers='$idPers'");
 		return $req;
 	}
 
   public static function hapusPers($idPers){
     $db = DB::getInstance();
 
-    $req = $db->query("DELETE FROM tb_Pers WHERE idPers='$idPers'");
+    $req = $db->query("DELETE FROM tb_pers WHERE idPers='$idPers'");
 
 
       return $req;
